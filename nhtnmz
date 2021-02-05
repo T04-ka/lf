@@ -1,0 +1,11 @@
+i = 11111
+chet = 0
+t = 0
+c = 
+while (i != 0):
+    i = int(input())
+    if i > t and chet != 0:
+        c += 1
+    t = i
+    chet += 1
+print (c)
