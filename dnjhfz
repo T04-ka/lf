@@ -1,0 +1,6 @@
+i = 11111
+chet = 0
+while (i != 0):
+    i = int(input())
+    chet += 1
+print (chet-1)
