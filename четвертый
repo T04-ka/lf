@@ -1,0 +1,11 @@
+i = 1
+maxx = 0
+c = 0
+while (i != 0):
+    i = int(input())
+    if i > maxx:
+        maxx = i
+        c = 0
+    if i == maxx:
+        c += 1
+print (c)
