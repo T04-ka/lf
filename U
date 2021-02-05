@@ -1,0 +1,19 @@
+i = 1
+prev = 0
+prev1 = -10
+c = 1
+ch = 0
+f = True
+while (i != 0):
+    i = int(input())
+    if f:
+        f = False
+        prev = i
+        prev1 = i
+        continue
+    if i == prev:
+        if i != prev1:
+            c += 1
+    prev1 = prev
+    prev = i
+print (c)
