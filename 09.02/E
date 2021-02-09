@@ -1,0 +1,11 @@
+def perimetr (x1,x2,x3,y1,y2,y3):
+    l1 = lenght(x1,x2,y1,y2)
+    l2 = lenght(x2,x3,y2,y3)
+    l3 = lenght(x3,x1,y3,y1)
+    per = l1 + l2 + l3
+    return per
+def length (p1,p2,p3,p4):
+    q = ((p1-p2) ** 2 + (p3-p4) ** 2) ** 0.5
+    return q
+print (perimetr(int(input()),int(input()),int(input()), '/n'
+                int(input()),int(input()),int(input())))
