@@ -1,0 +1,24 @@
+vis, shir = map(int,input().split())
+
+
+def spisok (m,n):
+    A = [[0] * m for i in range (n)]
+    Promej = chisla(n)
+    for i in range (m):
+        for j in range (n):
+            A[i][j] = Promej[j]
+    return A
+
+
+def chisla (u):
+    C = [0] * u
+    for i in range (u):    
+        C = list(input().split())
+    return C
+
+
+A = spisok(vis,shir)
+for i in range(vis):
+    for j in range(shir):
+        print (A[i][j], end = ' ')
+    print()
