@@ -1,0 +1,6 @@
+def my_min (a,b,c):
+    if a+b+c < 2:
+        return "false"
+    else:
+        return "true"
+print (my_min(int(input()),int(input()),int(input())))
