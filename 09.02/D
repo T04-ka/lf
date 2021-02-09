@@ -1,0 +1,8 @@
+def cel (cels,farin):
+    cels = 5/9 * (farin-32)
+    return cels
+def far (cels,farin):
+    farin = 9/5 * cels + 32
+    return farin
+print (cel(int(input()),int(input())))
+print (far(int(input()),int(input())))
