@@ -1,0 +1,7 @@
+def my_min (a,b):
+    q = 0
+    for i in range (len(a)):
+        if a[i] != b[i]:
+            q += 1
+    return q
+print (my_min(input(),input()))
