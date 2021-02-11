@@ -1,0 +1,39 @@
+def Read (m):
+    C = [0] * m
+    for i in range (m):    
+        C =  input().split()
+    return C
+
+def assign (n,m):
+    Val = Read(m)
+    A = [[0] * n for i in range (m)]
+    for i in range (n):
+        for j in range (m):
+            A[i][j] = Val[j]
+    return A
+
+
+def operation (A,n,m):
+    Val = [[0] * m for i in range (n)]
+    for i in range (m):
+        for j in range (n):
+            if i == 1 and j == 1:
+                Val[i][j] = A[2][1]
+            elif i == 1 and j == 2:
+                Val[i][j] = A[1][1]
+            elif A[i][j] == A[-1][-1]:
+                Val[i][j] = A[-1][-1]
+            elif A[i][j] == A[-2][-1]:
+                Val[i][j] = A[-2][-1]
+            else:
+                Val[i][j] = A[j][i]
+    return Val
+
+
+def Main (n,m):
+    A = assign(n,m)
+    Exit = operation (A,n,m)
+    return Exit
+
+print (Main(int(input()),int(input())))
+#не дае тсчитать true false
