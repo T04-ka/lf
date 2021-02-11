@@ -1,0 +1,11 @@
+red,green,blue = map(int,input().split())
+
+def count (colour, black):
+    val = (1 - colour - black) / (1-black)
+    return val
+
+r,g,b = red/255, green/255, blue/255
+K = 1 - max(r,g,b)
+
+print (count(r,K),count(g,K),count(b,K),K)
+
