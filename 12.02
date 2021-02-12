@@ -1,0 +1,36 @@
+f = open("C:/Users/zahar/Desktop/Python/T9/words.txt", 'r')
+Slovar = list(f.read().split())
+Words = list(input().split())
+output = []
+
+
+def ham_dist (a,b):
+    q = abs(len(a) - len(b))
+    for i in range (min(len(a),len(b))):
+        if a[i] != b[i]:
+            q += 1
+    return q
+
+
+
+def Equal (word, Slovar):
+    minn = ' '
+    minn2 = 10 ** 10
+    for i in range (len(Slovar)):
+        val_sl = Slovar[i]
+        for j in range (len(val_sl)):
+            a = ham_dist(word,val_sl)
+            if a < minn2:
+                minn = val_sl
+                minn2 = a
+    return (minn)
+
+
+
+
+
+for i in range (len(Words)):
+    output.append(Equal(Words[i],Slovar))
+print (*output)
+    
+
