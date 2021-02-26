@@ -1,0 +1,12 @@
+val = int(input())
+raz = []
+output = ''
+while val > 0:
+    raz.append(val%10)
+    val = val//10
+for i in range(len(raz)):
+    a = raz.index(max(raz))
+    output += str(raz[a])
+    raz[a] = 0
+print (output)
+    
