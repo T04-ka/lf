@@ -1,0 +1,76 @@
+def benchmark(n):
+    def decor(funs):
+        import time
+        
+        def plus(*args, **kwargs):
+            total = 0
+            for i in range(n):
+                begin = time.time()
+                val = func(*args, **kwargs)
+                end = time.time()
+                total = total + (end-start)
+            print('Middled working times: {} sec.'.format(total))
+            return val
+        return plus
+    return decor
+
+
+def benchmark1(n**2):
+    def decor1(funs):
+        import time
+        
+        def plus1(*args, **kwargs):
+            total = 0
+            for i in range(n):
+                begin = time.time()
+                val = func(*args, **kwargs)
+                end = time.time()
+                total = total + (end-start)
+            print('Middled working times: {} sec.'.format(total))
+            return val
+        return plus1
+    return decor1
+
+def benchmark1(n**2):
+    def decor1(funs):
+        import time
+        
+        def plus1(*args, **kwargs):
+            total = 0
+            for i in range(n):
+                begin = time.time()
+                val = func(*args, **kwargs)
+                end = time.time()
+                total = total + (end-start)
+            print('Middled working times: {} sec.'.format(total))
+            return val
+        return plus1
+    return decor1
+
+import math
+a = math.sqrt(n)
+def benchmark2(n*a):
+    def decor2(funs):
+        import time
+        
+        def plus2(*args, **kwargs):
+            total = 0
+            for i in range(n):
+                begin = time.time()
+                val = func(*args, **kwargs)
+                end = time.time()
+                total = total + (end-start)
+            print('Middled working times: {} sec.'.format(total))
+            return val
+        return plus2
+    return decor2
+
+
+@benchmark(n = 10)
+def f_web():
+    import request
+    webpage = request.get(url)
+    return webpage.text
+
+f_web()
+
