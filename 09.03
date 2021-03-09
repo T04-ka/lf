@@ -4,16 +4,10 @@ def DICTing(objects:list,inp_attr:list):
             atr = objects[j].__dict__
     return atr
 
-def sort(atr,attr):
-    bol = True
+def sort1(atr, attr):
+    out = [[] * 1 for i in range (len(attr))]
+    t = 0
     for i in attr:
-        if bol:
-            prev = atr.get(i)
-            bol = False
-            continue
-        now = atr.get(i)
-        if now > prev:
-            atr[i-1],atr[i] = atr[i],atr[i-1]
-        prev = atr.get(i)
-    return(atr)
-            
+        out[t].append(atr[i])
+        t += 1
+    return(out)
