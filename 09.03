@@ -1,13 +1,19 @@
-def sort(objects:list,attr:list):
-    for i in attr:
+def DICTing(objects:list,inp_attr:list):
+    for i in inp_attr:
         for j in range(len(objects)):
-            atr = objects[j];.__dict__
-            atrn = objects[j+1].__dict__
-            objects = atrr(atr,atrn,objects,j)
+            atr = objects[j].__dict__
+    return atr
 
-def atrr(atr,atrn,obj,j):
-    if atr == atrn:
-        continue
-    elif atr>atrn:
-        obj[j],obj[j+1] = obj[j+1],obj[j]
-    return obj
+def sort(atr,attr):
+    bol = True
+    for i in attr:
+        if bol:
+            prev = atr.get(i)
+            bol = False
+            continue
+        now = atr.get(i)
+        if now > prev:
+            atr[i-1],atr[i] = atr[i],atr[i-1]
+        prev = atr.get(i)
+    return(atr)
+            
