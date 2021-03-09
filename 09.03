@@ -1,13 +1,18 @@
 def DICTing(objects:list,inp_attr:list):
-    for i in inp_attr:
-        for j in range(len(objects)):
-            atr = objects[j].__dict__
+    atr = []
+    for j in range(len(objects)):
+        atr.append(objects[j].__dict__)
     return atr
 
-def sort1(atr, attr):
-    out = [[] * 1 for i in range (len(attr))]
-    t = 0
-    for i in attr:
-        out[t].append(atr[i])
-        t += 1
-    return(out)
+def sort(atr,attr,objects):
+    for j in range(len(objects)-1):
+        for i in range (len(objects)-j-1):
+            bol = True
+            for k in attr:
+                if atr[i][k] < atr[i+1][k]:
+                    bol = False
+                    break
+            if atr[i][k] != atr[i+1][k] and bol:
+                atr[i+1],atr[i] = atr[i],atr[i+1]
+
+    return atr           
