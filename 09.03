@@ -1,0 +1,13 @@
+def sort(objects:list,attr:list):
+    for i in attr:
+        for j in range(len(objects)):
+            atr = objects[j];.__dict__
+            atrn = objects[j+1].__dict__
+            objects = atrr(atr,atrn,objects,j)
+
+def atrr(atr,atrn,obj,j):
+    if atr == atrn:
+        continue
+    elif atr>atrn:
+        obj[j],obj[j+1] = obj[j+1],obj[j]
+    return obj
