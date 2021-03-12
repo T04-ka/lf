@@ -2,12 +2,11 @@ import time
 
 
 class Cat:
-    tirding = 1000
-    print("What's your cat's name?")
-    name = input()
+    
+    
     
 
-    def __init__(self):
+    def __init__(self,name,tirding):
         self.name = name
         self.tirding = tirding
 
@@ -47,7 +46,10 @@ class Cat:
 
     
 
-
+print("What your's cat name?")
+name = input()
+tirding = 1000
+Cats = Cat(name,tirding)
 
 
 print()
@@ -66,17 +68,18 @@ boolean = False
 while not boolean:
     val = input()
     if val == "Name":
-        Cat.getName()
+        Cats.getName()
     if val == "Fatigue":
-        Cat.getStamina()
+        Cats.getStamina()
     if val == "Sleep":
-        Cat.Sleep()
+        Cats.Sleep()
     if val == "Eat":
-        Cat.Eat()
+        Cats.Eat()
     if val == "Run":
-        Cat.Run()
+        Cats.Run()
     if val == "Exit":
         print("Goodbye! See you later!")
         boolean = True
     print()
-      
+
+    
