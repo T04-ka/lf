@@ -1,0 +1,82 @@
+import time
+
+
+class Cat:
+    tirding = 1000
+    print("What's your cat's name?")
+    name = input()
+    
+
+    def __init__(self):
+        self.name = name
+        self.tirding = tirding
+
+    def Run():
+        print("Cat is catching mice now!")
+        time.sleep(5)
+        print("Cat stopped, it's relaxing now.")
+        Cat.tirding -= 100
+        if Cat.tirding < 500:
+            print("Your cat is so tired now! Let its sleep or eat!")
+        if Cat.tirding == 0:
+            print("Your cat is very tired now, so he fell asleep!")
+            time.sleep(15)
+            Car.tirding = 500
+            print("Your cat woke up, but it angry, don't let its fell asleep!")
+
+    def Sleep():
+        print("Cat is sleeping...  Zzz")
+        time.sleep(5)
+        print ("Cat woke up!")
+        if Cat.tirding <= 900:
+            Cat.tirding += 100
+
+    def Eat():
+        print("Cat is eating...  Zzz")
+        time.sleep(7)
+        print ("Mmmm, so yummy!")
+        if Cat.tirding <= 800:
+            Cat.tirding += 200
+
+    def getStamina():
+        print("Your fatigue = ", Cat.tirding, ".")
+    
+
+    def getName():
+        print("Your cat's name is", Cat.name)
+
+    
+
+
+
+
+print()
+
+print("There is a command list:")
+print("Name - this command showes you your cat's name")
+print("Fatigue - this command showes you your cat's fatigue, when you begin, your cat's fatigue = 1000")
+print("Sleep - when you write this command, your cat goes sleeping for 5 seconds and restore 100 points of your it's fatigue")
+print("Eat - when you write this command, your cat goes eating for 7 seconds and restore 200 points of your it's fatigue")
+print("Run - when you write this command, your cat goes catching mice for 10 seconds and loose 100 points of your cat's fatigue")
+print("Exit - when you write this command, you finish the program and your cat says to you Goodbye!")
+print()
+
+boolean = False
+
+while not boolean:
+    val = input()
+    if val == "Name":
+        Cat.getName()
+    if val == "Fatigue":
+        Cat.getStamina()
+    if val == "Sleep":
+        Cat.Sleep()
+    if val == "Eat":
+        Cat.Eat()
+    if val == "Run":
+        Cat.Run()
+    if val == "Exit":
+        print("Goodbye! See you later!")
+        boolean = True
+    print()
+      
