@@ -1,0 +1,44 @@
+import math
+
+class Vector:
+    def __init__(self,x,y,z,x1,y1,z1,nx,ny,nz,nx1,ny1,nz1):
+        self.lth1 = "Unknown"
+        self.lth2 = "Unknown"
+        self.skl1 = "Unknown"
+        self.skl2 = "Unknown"
+        self.comp_x = "Unknown"
+        self.comp_y = "Unknown"
+        self.comp_z = "Unknown"
+        self.tang = "Unknown"
+    def Length(self,x,y,z,x1,y1,z1,nx,ny,nz,nx1,ny1,nz1):
+        self.lth1 = math.sqrt((x-x1)**2 + (y-y1)**2 + (z-z1)**2)
+        self.lth2 = math.sqrt((nx-nx1)**2 + (ny-ny1)**2 + (nz-nz1)**2)
+        
+    def Sklr_composition(self,x,y,z,x1,y1,z1,nx,ny,nz,nx1,ny1,nz1):
+        self.skl1 = x*x1 + y*y1 + z*z1
+        self.skl2 = nx*nx1 + ny*ny1 + nz*nz1
+        
+    def Composition(self,x,y,z,x1,y1,z1,nx,ny,nz,nx1,ny1,nz1):
+        self.comp_x = (y-y1)*(nz-nz1) - (z-z1)*(ny-ny1)
+        self.comp_y = (z-z1)*(nx-nx1) - (x-x1)*(nz-nz1)
+        self.comp_z = (x-x1)*(ny-ny1) - (y-y1)*(nx-nx1)
+
+    def Tangent(self,x,y,z,x1,y1,z1,nx,ny,nz,nx1,ny1,nz1):
+        Length()
+        Sklr_composition()
+        self.tang = (self.skl1,self.skl2)/(abs(self.lth1)*abs(self.lth1))
+        return self.tang
+        
+
+x,y,z = map(int,input().split())
+x1,y1,z1 = map(int,input().split())
+print()
+nx,ny,nz = map(int,input().split())
+nx1,ny1,nz1 = map(int,input().split())
+print()
+        
+a = Vector(x,y,z,x1,y1,z1,nx,ny,nz,nx1,ny1,nz1)
+   
+Vector.Tangent
+print(Vector.Tangent)
+
