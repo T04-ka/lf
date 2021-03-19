@@ -5,13 +5,14 @@ class  Stack:
     def Append(val):
         A = [val]
         Stack.data = A + Stack.data
-        return Stack.data
+        return val
         
     def POP():
+        aval = Stack.data[-1]
         Stack.data.pop(self)
-        return Stack.data
+        return aval
         
     def Peek(self):
-        Stack.data.peak()
+        anlav = Stack.data.peak()   
 
-        return Stack.data
+        return anval
