@@ -1,0 +1,17 @@
+class  Stack:
+    data = []
+    def __init__(self):
+        pass
+    def Append(val):
+        A = [val]
+        Stack.data = A + Stack.data
+        return Stack.data
+        
+    def POP():
+        Stack.data.pop(self)
+        return Stack.data
+        
+    def Peek(self):
+        Stack.data.peak()
+
+        return Stack.data
