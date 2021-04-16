@@ -1,0 +1,22 @@
+import cv2
+import random
+
+img = cv2.imread('C:\\Users\\zahar\\Pictures\\Screenshots\\aa.png')
+#print(len(img), len(img[0]))
+#cv2.imshow('image',img)
+#cv2.waitKey(0)
+img1 = cv2.imread('C:\\Users\\zahar\\Pictures\\Screenshots\\aaa.png')
+equal = 4976640
+too_equal = 0
+while (too_equal < equal):
+    for i in range(1920):
+        for j in range(1080):
+            for h in range(3):
+                if img[i][j][h] > img1[i][j][h]:
+                    img1[i][j][h] += 1
+                elif img[i][j][h] < img1[i][j][h]:
+                    img1[i][j][h] -= 1
+                elif img[i][j][h] == img1[i][j][h]:
+                    too_equal += 1
+cv2.imshow('image',img1)
+cv2.waitKey(0)
