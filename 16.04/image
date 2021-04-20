@@ -1,22 +1,46 @@
 import cv2
 import random
 
+def Evolucion(img,img1,Ideal,too_equal):
+    for i in range(1920):
+        for j in range(1080):
+            for h in range(3):
+                string = str(i) + str(j) + str(h)
+                if string in Ideal:
+                    continue
+                if img[i][j][h] < img1[i][j][h]:
+                    a = random.randint(0,1)
+                    if a == 0:
+                        img1[i][j][h] = 0 #селекция
+                    else:
+                        promez = img1[i][j][h]
+                        img1[i][j][h] = random.randint(0,255) #мутация
+                        while (img1[i][j][h] == promez): #если не мутировал
+                            img1[i][j][h] = random.randint(0,255)
+                elif img[i][j][h] > img1[i][j][h]:
+                    img1[i][j][h] = random.randint(img1[i][j][h],255)#сама эволюция
+                if img[i][j][h] == img1[i][j][h]: #проверка достиг ли идиала
+                    too_equal += 1
+                    Ideal += ' '
+                    Ideal += string
+    output = list(img1,Ideal)
+    return()
+
+
+
 img = cv2.imread('C:\\Users\\zahar\\Pictures\\Screenshots\\aa.png')
 #print(len(img), len(img[0]))
 #cv2.imshow('image',img)
 #cv2.waitKey(0)
 img1 = cv2.imread('C:\\Users\\zahar\\Pictures\\Screenshots\\aaa.png')
-equal = 4976640
+equal = 1658880
 too_equal = 0
+Ideal = ""
 while (too_equal < equal):
-    for i in range(1920):
-        for j in range(1080):
-            for h in range(3):
-                if img[i][j][h] > img1[i][j][h]:
-                    img1[i][j][h] += 1
-                elif img[i][j][h] < img1[i][j][h]:
-                    img1[i][j][h] -= 1
-                elif img[i][j][h] == img1[i][j][h]:
-                    too_equal += 1
+    promez1 = Evolucion(img,img1,Ideal,too_equal)
+    img1 = promez1[0]
+    Ideal = promez1[1]
 cv2.imshow('image',img1)
 cv2.waitKey(0)
+
+
